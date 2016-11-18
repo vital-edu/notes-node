@@ -1,0 +1,15 @@
+{
+  "name": "notes-node",
+  "version": "1.0.0",
+  "private": true,
+  "description": "App to learn Node.js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eduardo Vital",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.2"
+  }
+}
