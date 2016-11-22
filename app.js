@@ -14,14 +14,19 @@ console.log('Yargs', argv);
 if (command === 'add') {
   var note = notes.addNote(argv.title, argv.body)
   if (note) {
-    console.log(JSON.stringify(note));
+    notes.logNote(note, 'Note created')
   } else {
     console.log(`Note could not be saved. Note with title '${argv.title}' already exists`);
   };
 } else if (command === 'list') {
   notes.getAll();
 } else if (command === 'read') {
-  notes.getNote(argv.title);
+  var note = notes.getNote(argv.title);
+  if (note) {
+    notes.logNote(note, 'Note found')
+  } else {
+    console.log(`Note '${argv.title}' was not found`);
+  }
 } else if (command === 'remove') {
   var noteRemoved = notes.deleteNote(argv.title);
   console.log(noteRemoved);
